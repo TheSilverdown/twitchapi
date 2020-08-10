@@ -66,5 +66,24 @@ function twitch_get_followers($id)
     return $r;
 }
 
-//twitch_get_stream(TWITCH_ID_FOR_USER,"stream_status");
+function twitch_get_video($type,$code,$domain,$muted,$width,$height,$frame,$scroll,$fullscreen)
+{
+  echo "
+  <iframe
+    src='https://player.twitch.tv/?$type=$code&parent=$domain&muted=$muted'
+    height='$width'
+    width='$height'
+    frameborder='$frame'
+    scrolling='$scroll'
+    allowfullscreen='$fullscreen'>
+</iframe>
+  "; 
+}
+
+
+///USAGE
+//twitch_get_stream(TWITCH_ID_FOR_USER,'stream_status');
+//function twitch_get_user(TWITCH_ID_FOR_USER,'name');
+//function twitch_get_followers(TWITCH_ID_FOR_USER);
+//twitch_get_video("channel/video/collection","channelID/VideoID/CollectionID","yourdomain.com OR subdomain.yourdomain.com","true","450","675","0","no","true");
 ?>
